@@ -30,5 +30,14 @@ module DeviseTokenAuth
         render json: I18n.t("devise.failure.already_authenticated")
       end
     end
+
+    def set_flash_message(key, kind, options = {})
+      message = find_message(kind, options)
+      if options[:now]
+        render json: now[:key] = message if message.present?
+      else
+        render json: key = message if message.present?
+      end
+    end
   end
 end
